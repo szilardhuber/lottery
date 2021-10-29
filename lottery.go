@@ -7,7 +7,6 @@ import (
 	"os"
     "strings"
     "time"
-    "strconv"
 )
 
 func contains(a []string, i string) bool {
@@ -19,41 +18,11 @@ func contains(a []string, i string) bool {
     return false
 }
 
-func containsUint(a []uint, i uint) bool {
-    for _, item := range a {
-        if item == i {
-            return true
-        }
-    }
-    return false
-}
-
-func split(line string) []uint {
-    items := strings.Split(line, " ")
-    ret := make([]uint, len(items))
-    for i, v := range items {
-        u64, _ := strconv.ParseUint(v, 10, 16)
-        ret[i] = uint(u64)
-    }
-    return ret
-}
-
 func processLine(line string, winningNumbers []string) uint {
     var ret uint = 0
     items := strings.Split(line, " ")
     for _, item := range items {
         if contains(winningNumbers, item) {
-            ret += 1
-        }
-    }
-    return ret
-}
-
-func processLineUint(line string, winningNumbers []uint) uint {
-    var ret uint = 0
-    items := split(line)
-    for _, item := range items {
-        if containsUint(winningNumbers, item) {
             ret += 1
         }
     }
@@ -84,7 +53,6 @@ func main()  {
     stdinScanner := bufio.NewScanner(os.Stdin)
     for stdinScanner.Scan() {
         winningNumbers := strings.Split(stdinScanner.Text(), " ")
-        //winningNumbers := split(stdinScanner.Text())
         if len(winningNumbers) != 5 {
             break
         }
@@ -102,3 +70,4 @@ func main()  {
     }
 
 }
+
