@@ -41,4 +41,4 @@ Optimization:
 I believe the solution could handle an order of magnitude more input data but if we had even more that that I would think about just splitting the input file to smaller chunks, distributing it on different machines and doing the procesing parallel with some parallelization solutions. (For example with MPI but I haven't yet used MPI with go, only with python)
 
 Quality assurance:
-I haven't written any unit tests. To be honest I have spent more time with playing around the reduction of the memory usage than I wanted to (2-3 hours total for the whole problem) so I stop it here. I think most methods could have some tests but the only one I believe is complex enough to get actualy value in covering with tests is the `split` method.
+I haven't written any unit tests. To be honest I have spent more time with playing around the reduction of the memory usage than I wanted to (2-3 hours total for the whole problem) so I stop it here. I think most methods could have some tests but the only one I believe is complex enough to provide actual value in covering with tests is the `split` method.
