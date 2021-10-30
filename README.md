@@ -4,7 +4,7 @@ Given an input file data of 5-10m lottery tickets find the number of winning tic
 
 # Building and running
 
-`go run .`
+`go run . <<input_file_name>>`
 
 When run without any additional settings, the output is reduced to follow the required format in the problem statement. If the environment has a `DEBUG=1` variable then extra information is displayed as well (like invalid tickets or time for building the main data model or calculating the results)
 
